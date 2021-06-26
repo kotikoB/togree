@@ -15,7 +15,7 @@
 
 1. So that the development and environments can be ported from one machine to another without any configurations eg database.
 2. So that development, staging and production environments can be identical, eliminating the issue where code runs on one machine but does not run in another machine.
-3. That's all Enjoy! :)
+3. That's all Enjoy! :wink:
 
 ### Alternative
 
