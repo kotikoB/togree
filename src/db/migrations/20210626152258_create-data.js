@@ -8,7 +8,7 @@ exports.up = function (knex) {
         table.string('lng').notNullable();
         table.integer('angle').notNullable();
         table.integer('speed').notNullable();
-        table.integer('status').notNullable();
+        table.string('status').notNullable();
         table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
         table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now());
     });

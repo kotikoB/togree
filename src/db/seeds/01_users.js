@@ -10,13 +10,13 @@ exports.seed = async function (knex) {
     await knex('user').truncate();
     return await knex('user').insert([
         {
-            username: 'demo',
-            emial: 'test@togree.co.ke',
+            userName: 'demo',
+            email: 'test@togree.co.ke',
             password: await hashPassword('P@$$test123456')
         },
         {
-            username: 'janeDoe',
-            emial: 'test@togree.co.ke',
+            userName: 'janeDoe',
+            email: 'test@togree.co.ke',
             password: await hashPassword('P@$$w0rd!')
         }
     ]);
