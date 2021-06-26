@@ -1,7 +1,7 @@
 version: '3.5'
 services:
     chama-app:
-        image: chama.backend:latest
+        image: togree.backend:latest
         build: .
         container_name: chama-app
         restart: unless-stopped
