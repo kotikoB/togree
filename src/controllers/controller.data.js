@@ -41,7 +41,6 @@ const getAll = async (req, res) => {
             res.status(404).json({ err });
         }
     }
-    // fetch data by query request params
 };
 
 const getOne = async (req, res) => {
