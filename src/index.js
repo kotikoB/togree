@@ -9,7 +9,6 @@ app.use(express.json());
 dotenv.config();
 
 // TODO add testing for routes
-app.use('/api', require('./routes/route.user'));
 app.use('/auth', require('./routes/route.auth'));
 
 module.exports = app;
