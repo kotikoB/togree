@@ -22,6 +22,7 @@ const getAll = async (req, res) => {
         }
     }
 
+    // fetch data by status
     if (status && !speed) {
         try {
             const data = await Data.get({ status });
@@ -31,6 +32,7 @@ const getAll = async (req, res) => {
         }
     }
 
+    // fetch data by speed and status
     if (status && speed) {
         try {
             const data = await Data.get({ status, speed });
