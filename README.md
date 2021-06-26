@@ -1,6 +1,6 @@
 # Togree Assignment
 
-## Intall
+## Intall and Run on Docker ( Recommended )
 
 - Install docker on your machine
 

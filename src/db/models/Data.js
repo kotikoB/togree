@@ -12,10 +12,14 @@ class Data {
     }
 
     static async get(query) {
-        if (query === null || query === undefined) {
-            return await knex(tableName);
+        try {
+            if (query === null || query === undefined) {
+                return await knex(tableName);
+            }
+            return await knex(tableName).where(query);
+        } catch (err) {
+            throw err;
         }
-        return await knex(tableName).where(query);
     }
 
     static async getOne(query) {
