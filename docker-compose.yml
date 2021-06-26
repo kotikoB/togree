@@ -1,0 +1,40 @@
+version: '3.5'
+services:
+    chama-app:
+        image: chama.backend:latest
+        build: .
+        container_name: chama-app
+        restart: unless-stopped
+        env_file: .env
+        environment:
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+            - POSTGRES_USER=${DB_USER}
+            - POSTGRES_DB=${DB_NAME}
+            - NODE_ENV=${NODE_ENV}
+        ports:
+            - '3033:3000'
+        depends_on:
+            - db
+        command: sh -c "npm run migrate && npm run seed && npm run start"
+        networks:
+            - backend
+
+    db:
+        image: postgres:12.3-alpine
+        restart: always
+        container_name: backend.db
+        environment:
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+            - POSTGRES_USER=${DB_USER}
+            - POSTGRES_DB=${DB_NAME}
+            - PORT=${DB_PORT}
+        ports:
+            - '5432:${DB_PORT}'
+        volumes:
+            - /var/lib/postgresql/data
+        networks:
+            - backend
+
+networks:
+    backend:
+        name: backend
