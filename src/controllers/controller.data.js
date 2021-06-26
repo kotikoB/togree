@@ -1,9 +1,9 @@
-const { User } = require('../db/models');
+const { Data } = require('../db/models');
 
 const getAll = async (req, res) => {
     try {
-        const users = await User.get();
-        res.status(200).json(users);
+        const data = await Data.get();
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).json({ err });
     }
@@ -12,8 +12,8 @@ const getAll = async (req, res) => {
 const getOne = async (req, res) => {
     const { id } = req.params;
     try {
-        const user = await User.getOne({ id });
-        res.status(200).json(user);
+        const data = await Data.getOne({ id });
+        res.status(200).json(data);
     } catch (err) {
         res.status(404).json({ err });
     }

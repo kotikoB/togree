@@ -10,5 +10,6 @@ dotenv.config();
 
 // TODO add testing for routes
 app.use('/auth', require('./routes/route.auth'));
+app.use('/', require('./routes/route.data'));
 
 module.exports = app;
