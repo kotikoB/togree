@@ -15,11 +15,7 @@ class Data {
         if (query === null || query === undefined) {
             return await knex(tableName);
         }
-        try {
-            return await knex(tableName).where(query);
-        } catch (err) {
-            throw err;
-        }
+        return await knex(tableName).where(query);
     }
 
     static async getOne(query) {
