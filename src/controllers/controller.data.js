@@ -3,40 +3,40 @@ const { Data } = require('../db/models');
 const getAll = async (req, res) => {
     const { speed, status } = req.query;
 
-    if (speed === null || speed === undefined || status === null || status === undefined) {
+    if (!speed && !status) {
         try {
             const data = await Data.get();
-            res.status(200).json(data);
+            return res.status(200).json(data);
         } catch (err) {
             res.status(404).json({ err });
         }
     }
 
     // fetch data by speed
-    if (speed && !status) {
+    if (speed) {
         try {
             const data = await Data.get({ speed });
-            res.status(200).json(data);
+            return res.status(200).json(data);
         } catch (err) {
             res.status(404).json({ err });
         }
     }
 
     // fetch data by status
-    if (status && !speed) {
+    if (status) {
         try {
             const data = await Data.get({ status });
-            res.status(200).json(data);
+            return res.status(200).json(data);
         } catch (err) {
             res.status(404).json({ err });
         }
     }
 
     // fetch data by speed and status
-    if (status && speed) {
+    if (status || speed) {
         try {
             const data = await Data.get({ status, speed });
-            res.status(200).json(data);
+            return res.status(200).json(data);
         } catch (err) {
             res.status(404).json({ err });
         }

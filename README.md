@@ -9,7 +9,7 @@
 - Pull docker image by running the following command in your terminal
   `docker pull`
 - Open postman or any REST client
-- Import the included postman file
+- Import postman collection from `https://www.getpostman.com/collections/672f91237b7ff592a335`
 - Start testing. That's all Enjoy! :wink:
 
 ### Reason for using docker container
