@@ -23,6 +23,9 @@
 - Run `git pull` to get source code locally
 - Create .env file in the root directory
 - Copy contents of .env.example to .env
+- Uncomment line 6 in the .env file and comment line 7, it should look like this:
+  `6 DB_HOST = backend.db`
+  `7 # DB_HOST = localhost`
 
 ### Open your terminal and navigate to this project and run the following commands
 
