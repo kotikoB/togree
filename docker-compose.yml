@@ -21,6 +21,11 @@ services:
 
     db:
         image: postgres:12.3-alpine
+        healthcheck:
+            test: ['CMD', 'pg_isready', '-q', '-d', 'postgres', '-U', 'root']
+            timeout: 45s
+            interval: 10s
+            retries: 10
         restart: always
         container_name: backend.db
         environment:
@@ -31,6 +36,7 @@ services:
         ports:
             - '5432:${DB_PORT}'
         volumes:
+            - ./src/db/initialize_db.sql:/docker-entrypoint-initdb.d/initialize_db.sql
             - /var/lib/postgresql/data
         networks:
             - backend
