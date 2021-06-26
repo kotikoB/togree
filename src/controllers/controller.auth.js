@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const { registerValidation, loginValidation } = require('../utils/validations');
+const { signUpValidation, signInValidation } = require('../utils/validations');
 
 const { User } = require('../db/models');
 
-const register = async (req, res) => {
-    const { error } = registerValidation(req.body);
+const signUp = async (req, res) => {
+    const { error } = signUpValidation(req.body);
     if (error) return res.status(400).send(error.details);
 
     // check if user exists
@@ -29,8 +29,8 @@ const register = async (req, res) => {
     }
 };
 
-const login = async (req, res) => {
-    const { error } = loginValidation(req.body);
+const signIn = async (req, res) => {
+    const { error } = signInValidation(req.body);
     if (error) return res.status(400).send(error.details);
 
     // fetch user from DB
@@ -50,4 +50,4 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { register, login };
+module.exports = { signUp, signIn };

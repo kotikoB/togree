@@ -1,9 +1,8 @@
 const knex = require('../knex');
 const tableName = 'user';
 class User {
-    constructor(firstName, lastName, email, password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    constructor(userName, email, password) {
+        this.userName = userName;
         this.email = email;
         this.password = password;
     }
@@ -30,8 +29,7 @@ class User {
 
     async save() {
         const userData = {
-            firstName: this.firstName,
-            lastName: this.lastName,
+            userName: this.userName,
             email: this.email,
             password: this.password
         };
