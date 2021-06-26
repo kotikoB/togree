@@ -30,6 +30,15 @@ const getAll = async (req, res) => {
             res.status(404).json({ err });
         }
     }
+
+    if (status && speed) {
+        try {
+            const data = await Data.get({ status, speed });
+            res.status(200).json(data);
+        } catch (err) {
+            res.status(404).json({ err });
+        }
+    }
     // fetch data by query request params
 };
 
