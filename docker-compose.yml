@@ -12,7 +12,7 @@ services:
             - POSTGRES_DB=${DB_NAME}
             - NODE_ENV=${NODE_ENV}
         ports:
-            - '3033:3000'
+            - '3000:3000'
         depends_on:
             - db
         command: sh -c "npm run migrate && npm run seed && npm run start"
