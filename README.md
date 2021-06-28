@@ -3,15 +3,13 @@
 ## Installation Instructions
 
 ### Install postgres SQL in your machine and create a database named togree
-
-### Run the following commands
-
-- Run `git pull` to get source code locally
 - Create .env file in the root directory
 - Copy contents of .env.example to .env
+- Edit contents to match your database name, username and password
 
 ### Open your terminal and navigate to this project and run the following commands
 
+- Run `git pull` to get source code locally
 - Run `npm i` to install all dependencies
 - Run `npm run migrate` to create database tables
 - Run 'npm run seed` to populate tables with data
