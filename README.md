@@ -12,7 +12,7 @@
 - Run `git pull` to get source code locally
 - Run `npm i` to install all dependencies
 - Run `npm run migrate` to create database tables
-- Run 'npm run seed` to populate tables with data
+- Run `npm run seed` to populate tables with data
 - Run `npm run dev` to run project in development
 - Import postman collection from `https://www.getpostman.com/collections/672f91237b7ff592a335`
 - Test away! :wink:
